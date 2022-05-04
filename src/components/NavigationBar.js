@@ -22,6 +22,11 @@ const NavigationBar = ()=>{
           <Link to="/" style={{textDecoration:'none', color:'black'}}>HOME </Link>
           </NavLink>
         </NavItem>
+        <NavItem>
+          <NavLink>
+          <Link to="/HomeManager" style={{textDecoration:'none', color:'black'}}>Manager </Link>
+          </NavLink>
+        </NavItem>
 
         {/* <NavItem>
           <NavLink>
