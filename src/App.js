@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Switch ,useLocation ,Route, Routes} from 'react-router-dom';
+import {Container,Row} from 'reactstrap'
+import NavigationBar from './components/NavigationBar';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import AllTasks from './pages/AllTasks';
+import Notifications from './pages/Notifications';
+import HomeManager from './pages/manager/Home';
 
-function App() {
+
+
+const App = ()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <NavigationBar/>
+    <Container>
+      <Routes>  
+        <Route exact path="/login" element={<Login/>}/>
+        <Route exact path="/register" element={<Register/>}/>   
+        <Route exact path="/" element={<Home/>} />
+        <Route exact path="/allTasks" element={<AllTasks/>}/>   
+        <Route exact path="/notifications" element={<Notifications/>}/>   
+
+
+
+
+        {/* Manager  */}
+        <Route exact path="/HomeManager" element={<HomeManager/>}/>
+
+
+      </Routes>
+    </Container>
+  </Router>
   );
 }
 
